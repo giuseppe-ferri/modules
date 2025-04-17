@@ -48,7 +48,7 @@ resource "aws_launch_template" "example" {
     db_port     = data.terraform_remote_state.db.outputs.port
   }))
 
-  # Required when using a launch configuration with an auto scaling group
+  # Required when using a launch configuration with an auto scaling group 
   lifecycle {
     create_before_destroy = true
   }
