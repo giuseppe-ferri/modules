@@ -75,7 +75,11 @@ resource "aws_autoscaling_group" "example" {
   }
 
   dynamic "tag" {
-    for_each = var.custom_tags
+    for_each = {
+      for key, value in var.custom_tags:
+      key => upper(value)
+      if key != "Name"
+    }
 
     content {
       key                 = tag.key
@@ -216,6 +220,6 @@ resource "aws_autoscaling_schedule" "scale_in_at_night" {
   min_size               = 1
   max_size               = 2
   desired_capacity       = 1
-  recurrence             = "0 17 * * *"
+  recurrence             = "0 12 * * *"
   autoscaling_group_name = aws_autoscaling_group.example.name
 }
