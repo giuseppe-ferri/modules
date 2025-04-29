@@ -22,3 +22,11 @@ output "alb_security_group_id" {
   description = "The ID of the Security Group attached to the load balancer"
   value       = aws_security_group.alb.id
 }
+
+output "user_data" {
+  value = aws_launch_template.example.user_data
+}
+
+output "ami" {
+  value = aws_launch_template.example.image_id
+}
