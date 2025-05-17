@@ -40,11 +40,3 @@ output "vpc_id" {
 output "subnet_ids" {
   value = aws_subnet.public[*].id
 }
-
-output "db_subnet_group_name" {
-  value = aws_db_subnet_group.db.name
-}
-
-output "security_group_id" {
-  value = aws_security_group.db_sg.id
-}

@@ -8,7 +8,6 @@ variable "db_name" {
 
 variable "db_username" {
   type = string
-  sensitive = true
 }
 
 variable "db_password" {
@@ -28,7 +27,7 @@ variable "allocated_storage" {
 
 variable "skip_final_snapshot" {
   type = bool
-  default = true 
+  default = true
 }
 
 variable "backup_retention_period" {
