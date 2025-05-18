@@ -1,7 +1,6 @@
 resource "aws_db_instance" "example" {
   identifier           = "${var.environment}-postgres-db"
   engine               = "postgres"
-  engine_version       = "15.2"
   instance_class       = var.instance_class
   allocated_storage    = var.allocated_storage
   db_name              = var.db_name
